@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+<main class="texttranslate">
+  <h1>Submit a Translation Idea</h1>
+  <form method="POST" action="/submit">
+    <textarea name="idea" rows="5" cols="60" placeholder="Describe your translation idea..." required></textarea><br><br>
+
+    <input type="text" name="name" placeholder="Your name (optional)" /><br><br>
+
+    <button type="submit" class="tranbutton">Submit Idea</button>
+  </form>
+
+  <% if (submitted) { %>
+    <div class="finaltran">
+      <h2>Thank You!</h2>
+      <p>Your idea has been submitted successfully.</p>
+    </div>
+  <% } %>
+</main>
+<%- include("partials/footer.ejs") %>

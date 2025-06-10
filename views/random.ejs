@@ -1,0 +1,21 @@
+ <%- include("partials/header.ejs") %>
+
+ 
+<main class="texttranslate">
+    <h1>Random Translations?</h1>
+    <form method="POST" action="/funModes">
+        <textarea name="text" rows="5" cols="60" placeholder="Enter your text here......" required><%=typeof inputText !=='undefined' ? inputText : ""  %></textarea><br><br>
+
+</select><br> <br>
+<button type="submit" class="tranbutton">Random</button>
+    </form>
+
+<div class="finaltran">
+    <% if (output && type){ %>
+<h2>Translated Text:</h2>
+<h2><%=type%></h2>
+<p> <%= output %></p>
+        <%}%>
+        </div>
+</main>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,26 @@
+ <%- include("partials/header.ejs") %>
+
+ 
+<main class="texttranslate">
+    <h1>Translate Your Text</h1>
+    <form method="POST" action="/translate">
+        <textarea name="text" rows="5" cols="60" placeholder="Enter your text here......" required><%=typeof inputText !=='undefined' ? inputText : ""  %></textarea><br><br>
+
+       <select name="language" id="sellang">
+  <option value="yoda" <%= selectedLanguage === 'yoda' ? 'selected' : '' %>>Yoda</option>
+  <option value="pirate" <%= selectedLanguage === 'pirate' ? 'selected' : '' %>>Pirate</option>
+  <option value="minion" <%= selectedLanguage === 'minion' ? 'selected' : '' %>>Minion</option>
+  <option value="shakespeare" <%= selectedLanguage === 'shakespeare' ? 'selected' : '' %>>Shakespeare</option>
+  <option value="morse" <%= selectedLanguage === 'morse' ? 'selected' : '' %>>Morse</option>
+</select><br> <br>
+<button type="submit" class="tranbutton">Translate</button>
+    </form>
+
+<div class="finaltran">
+    <% if (output){ %>
+<h2>Translated Text:</h2>
+<p> <%= output %></p>
+        <%}%>
+        </div>
+</main>
+<%- include("partials/footer.ejs") %>
